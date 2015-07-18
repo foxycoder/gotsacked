@@ -1,0 +1,71 @@
+<div class = "title">
+  <h1>Got sacked?</h1>
+</div>
+<div class = "container">
+<%= render 'form' %>
+<div class="form_right">
+
+<ul>
+<li>
+
+
+<img src="/assets/compensation_total.jpg" width="30"><strong> Total compensation:</strong>
+<span class="value">
+  <%= Money.new(100 * @calculation.compensation_value, "EUR").format(:no_cents => true) %>
+</span>
+<br><br>
+
+<li>
+
+
+<img src="/assets/ww_months.jpg" width="35"><strong> Unemployment benefit (in months):</strong>
+<span class="value">
+<%= @calculation.months_ww %>
+</span>
+<br><br>
+
+<li>
+
+<img src="/assets/ww_total.jpg" width="35"><strong> Unemployment benefit (amount):</strong>
+<span class="value">
+<%= Money.new(100*@calculation.ww_value, "EUR").format(:no_cents => true) %>
+</span>
+
+<br><br>
+<li>
+
+
+<img src="/assets/compensation_total.jpg" width="35"><strong> Total compensation + unemployment benefit:</strong>
+<span class="value">
+  <%= Money.new(100 * @calculation.total_value, "EUR").format(:no_cents => true) %>
+  </span>
+
+<br><br>
+<li>
+
+<img src="/assets/expected_duration.jpg" width="35"><strong> Expected duration (months) to find a new job: </strong>
+<span class="value">
+  <%= (@calculation.search_time).to_i %>
+  </span>
+
+<br><br>
+<li>
+
+<img src="/assets/potential.jpg" width="35"><strong> What you could have earned if you kept your job:</strong>
+<span class="value">
+  <%= Money.new(100 * @calculation.possible_earnings_value, "EUR").format(:no_cents => true) %>
+  </span>
+
+<br><br>
+<li>
+
+<img src="/assets/net_result.jpg" width="35"><strong> Net result:</strong>
+<span class="value">
+  <%= Money.new(100 * @calculation.difference, "EUR").format(:no_cents => true) %>
+  </span>
+
+</ul>
+</div>
+<!-- <%= link_to 'Show', @calculation %> | -->
+<!--<%= link_to 'Back', calculations_path %> -->
+</div>

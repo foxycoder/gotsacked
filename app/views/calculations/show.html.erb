@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @calculation.age %>
+</p>
+
+<p>
+<strong>Total compensation:</strong>
+<%= @calculation.compensation_value %>
+</p>
+
+<p>
+<strong>Unemployment benefit (in months):</strong>
+<%= @calculation.months_ww %>
+</p>
+
+<p>
+<strong>Unemployment benefit (amount):</strong>
+<%= @calculation.ww_value %>
+</p>
+
+<p>
+<strong>Total compensation + unemployment benefit:</strong>
+<%= @calculation.total_value %>
+</p>
+
+<p>
+<strong>Expected duration (months) to find a new job: </strong>
+<%= @calculation.search_time %>
+</p>
+
+<p>
+<strong>What you could have earned if you kept your job:</strong>
+<%= @calculation.possible_earnings_value %>
+</p>
+
+<p>
+<strong>Net result:</strong>
+<%= @calculation.difference %>
+</p>
+
+<p>
+  <strong>Working years:</strong>
+  <%= @calculation.working_years %>
+</p>
+
+<p>
+  <strong>Working years total:</strong>
+  <%= @calculation.working_years_total %>
+</p>
+
+<p>
+  <strong>Gross salary:</strong>
+  <%= @calculation.gross_salary %>
+</p>
+
+<p>
+  <strong>Education level:</strong>
+  <%= @calculation.education_level %>
+</p>
+
+<!-- <p>
+  <strong>Email address:</strong>
+  <%= @calculation.email_address %>
+</p> -->
+
+<%= link_to 'Edit', edit_calculation_path(@calculation) %> |
+<%= link_to 'Back', calculations_path %>

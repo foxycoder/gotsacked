@@ -1,0 +1,47 @@
+<%= form_for(@calculation) do |f| %>
+  <% if @calculation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@calculation.errors.count, "error") %> prohibited this calculation from being saved:</h2>
+
+      <ul>
+      <% @calculation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form_left">
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :working_years %><br>
+    <%= f.number_field :working_years %>
+  </div>
+  <div class="field">
+    <%= f.label :working_years_total %><br>
+    <%= f.number_field :working_years_total %>
+  </div>
+  <div class="field">
+    <%= f.label :gross_salary %><br>
+    <%= f.number_field :gross_salary %>
+  </div>
+  <div class="field">
+    <%= f.label :education_level %><br>
+    <%= f.select :education_level, ["VMBO","MBO","HBO","WO"], include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :profession %><br>
+    <%= f.select :profession, ['Agrarisch', 'Commercieel', 'Creatieve en taalkundige beroepen', 'Dienstverlenend', 'Economisch, administratief', 'ICT', 'Management', 'Openbaar bestuur, veiligheid en juridisch', 'Pedagogisch', 'Technisch', 'Transport en logistiek', 'Zorg en welzijn'], include_blank: true %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :email_address %><br>
+    <%= f.text_area :email_address %>
+  </div> -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

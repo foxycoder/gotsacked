@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  age: 1
+  working_years: 1
+  working_years_total: 1
+  gross_salary: 1
+  education_level: MyText
+  email_address: MyText
+
+two:
+  age: 1
+  working_years: 1
+  working_years_total: 1
+  gross_salary: 1
+  education_level: MyText
+  email_address: MyText

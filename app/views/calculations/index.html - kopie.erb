@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Calculations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Working years</th>
+      <th>Working years total</th>
+      <th>Gross monthly salary</th>
+      <th>Education level</th>
+      <th>Email address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calculations.each do |calculation| %>
+      <tr>
+        <td><%= calculation.age %></td>
+        <td><%= calculation.working_years %></td>
+        <td><%= calculation.working_years_total %></td>
+        <td><%= calculation.gross_salary %></td>
+        <td><%= calculation.education_level %></td>
+        <td><%= calculation.email_address %></td>
+        <td><%= link_to 'Show', calculation %></td>
+        <td><%= link_to 'Edit', edit_calculation_path(calculation) %></td>
+        <td><%= link_to 'Destroy', calculation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Calculation', new_calculation_path %>
